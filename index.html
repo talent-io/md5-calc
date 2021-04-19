@@ -1,7 +1,7 @@
 <html>
   <body>
     <form id="form" onsubmit="run()">
-      <label for="string">String</label>
+      <label for="string">Domain</label>
       <input type="text" id="string" size="40" />
       <input type="submit" value="MD5 >" />
       <input type="text" id="result" size="40" disabled />
@@ -13,7 +13,7 @@
       document.getElementById("form").addEventListener("submit", e => e.preventDefault());
 
       function run() {
-        let value = document.getElementById("string").value;
+        let value = document.getElementById("string").value.toLowerCase();
         let hash = CryptoJS.MD5(value).toString();
         document.getElementById("result").value = hash;
         document.getElementById("result-wrapper").style = "display: block;";
