@@ -13,7 +13,7 @@
       document.getElementById("form").addEventListener("submit", e => e.preventDefault());
 
       function run() {
-        let value = document.getElementById("string").value.toLowerCase();
+        let value = document.getElementById("string").value.toLowerCase().trim();
         let hash = CryptoJS.MD5(value).toString();
         document.getElementById("result").value = hash;
       }
